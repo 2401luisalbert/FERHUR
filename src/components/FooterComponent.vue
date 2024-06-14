@@ -46,12 +46,12 @@
 
 .footer .row a, .footer .row router-link {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   transition: 0.5s;
 }
 
 .footer .row a:hover, .footer .row router-link:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .footer .row ul {

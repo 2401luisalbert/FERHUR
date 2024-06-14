@@ -22,7 +22,7 @@
                 </li>
                 <li class="nav__item nav__item--has-submenu">
                     <a href="#" class="nav__link" :class="{ 'nav__link--active': isActive('Servicios') }"
-                        @click.prevent="toggleSubmenu">Servicios</a>
+                        @click.prevent="toggleSubmenu"  @click="scrollToServices">Servicios</a>
                     <ul class="nav__submenu" :class="{ 'submenu-visible': submenuVisible || isActive('Servicios') }">
                         <li class="nav__submenu-item">
                             <router-link :to="{ name: 'Servicio1' }" class="nav__submenu-link"
@@ -42,8 +42,8 @@
                     </ul>
                 </li>
                 <li class="nav__item">
-                    <router-link to="/contacto" class="nav__link" exact-active-class="nav__link--active"
-                        @click="closeMenu">Contacto</router-link>
+                    <a href="#" class="nav__link" exact-active-class="nav__link--active"
+                        @click="scrollToContact">Contacto</a>
                 </li>
             </ul>
 
@@ -59,11 +59,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
+import VueScrollTo from 'vue-scrollto';
 
 const menuOpen = ref(false);
 const submenuVisible = ref(false);
 const route = useRoute();
 const scrolled = ref(false);
+const threshold = 10;
 
 const toggleSubmenu = () => {
     submenuVisible.value = !submenuVisible.value;
@@ -85,10 +87,18 @@ const isActive = (menu) => {
     return false;
 };
 
-const threshold = 10;
-
 const handleScroll = () => {
-  scrolled.value = Math.abs(window.scrollY) > threshold;
+    scrolled.value = Math.abs(window.scrollY) > threshold;
+};
+
+const scrollToContact = () => {
+  VueScrollTo.scrollTo('#contact', 800);
+  closeMenu();
+};
+
+const scrollToServices = () => {
+  VueScrollTo.scrollTo('#services', 800);
+  closeMenu();
 };
 
 onMounted(() => {
@@ -164,7 +174,7 @@ body {
     opacity: 0;
     transform: scale(0.9);
     position: absolute;
-    top: 10px; 
+    top: 10px;
 }
 
 .nav--scrolled .nav__logo--scrolled {
@@ -176,6 +186,7 @@ body {
     opacity: 0;
     transform: scale(0.9);
 }
+
 .nav__logo--mobile {
     display: block;
     width: 80px;
@@ -215,7 +226,7 @@ body {
 }
 
 .nav__link:hover {
-    color: #0000ff;
+    color: #ffffff;
 }
 
 .nav__link--active {
@@ -315,24 +326,35 @@ body {
     }
 
     .nav__link {
-        color: #000;
+        color: #fff;
         font-size: 1.2rem;
         letter-spacing: normal;
-        transition: color 0.3s;
+        position: relative;
     }
 
-    .nav__link:hover {
-        color: #ffffff;
+    .nav__link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+
+    .nav__link:hover::after {
+        width: 100%;
     }
 
     .nav__link--active {
-        color: #ffffff;
+        color: #fff;
         font-weight: bold;
     }
 
-    .nav__link--active--scroll {
-        color: #ffffff;
-        font-weight: bold;
+    .nav__link--active::after {
+        width: 100%;
     }
 
     .nav__submenu {

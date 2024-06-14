@@ -1,4 +1,7 @@
 <template>
+
+    <div class="services" id="services"></div>
+
     <div class="container">
         <div class="container__elements">
             <div class="container__texts">
@@ -41,6 +44,11 @@ const lista = [
 </script>
 
 <style lang="css" scoped>
+
+.services{
+    padding-top: 2rem;
+}
+
 .container {
     color: #ffffff;
     width: 100%;

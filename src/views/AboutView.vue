@@ -1,19 +1,14 @@
 <template>
-  <div class="container">
-    <h1>About Page</h1>
-    <p>Acerca de nosotros.</p>
-  </div>
+  <HeaderComponent title="Nosotros"
+    heightComponent="30vh" />
+    <!-- <DescriptionComponent/> -->
 </template>
 
 <script setup>
-
+import HeaderComponent from '@/components/HeaderComponent.vue';
+//import DescriptionComponent from '@/components/DescriptionComponent.vue';
 </script>
 
 <style lang="css" scoped>
-.container{
-  padding-top: 7rem;
-  background-color: cornflowerblue;
-  width: 100%;
-  height: 100vh;
-}
+
 </style>

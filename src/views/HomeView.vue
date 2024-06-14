@@ -1,9 +1,12 @@
 <template>
-  <HeaderComponent/>
-  <PresentationComponent/>
-  <JustificationComponent/>
-  <WorkAreaComponent/>
-  <ContactComponent/>
+  <HeaderComponent  logo="../assets/logo.svg"
+      title="Gestión y Eficiencia"
+      subtitle="Control de Plagas, Mantenimiento y Reparación de Equipos Domésticos y Comerciales"
+      heightComponent="55vh" />
+  <PresentationComponent />
+  <JustificationComponent />
+  <WorkAreaComponent  />
+  <ContactComponent />
 </template>
 
 <script setup>
