@@ -4,8 +4,8 @@
 </template>
 
 <script setup>
-
-</script>
+import HeaderComponent from '@/components/HeaderComponent.vue';
+//</script>
 
 <style lang="css" scoped>
 

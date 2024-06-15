@@ -25,7 +25,7 @@ onMounted(() => {
   const sr = ScrollReveal({
     reset: false,
     distance: '100px',
-    duration: 800,
+    duration: 1500,
     easing: 'ease-out',
     viewOffset: {
         bottom: 100,
@@ -123,7 +123,6 @@ onMounted(() => {
     z-index: 2; 
 }
 
-/* Media query for devices with a maximum width of 768px */
 @media (max-width: 768px) {
     .container {
     width: 100%;

@@ -23,7 +23,7 @@ onMounted(() => {
   const sr = ScrollReveal({
     reset: false,
     distance: '100px',
-    duration: 800,
+    duration: 1500,
     easing: 'ease-out',
     viewOffset: {
       bottom: 100,
@@ -54,9 +54,8 @@ onMounted(() => {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 8rem;
   margin-top: 3rem;
-  overflow: hidden; /* Para prevenir desbordamiento */
+  overflow: hidden; 
 }
 
 .container__elements {

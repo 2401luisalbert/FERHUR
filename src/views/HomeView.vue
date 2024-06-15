@@ -1,8 +1,8 @@
 <template>
-  <HeaderComponent  logo="../assets/logo.svg"
+  <HeaderComponent  logo
       title="Gestión y Eficiencia"
       subtitle="Control de Plagas, Mantenimiento y Reparación de Equipos Domésticos y Comerciales"
-      heightComponent="55vh" />
+      heightComponent="70vh" />
   <PresentationComponent />
   <JustificationComponent />
   <WorkAreaComponent  />

@@ -61,7 +61,7 @@ onMounted(() => {
   const sr = ScrollReveal({
     reset: false,
     distance: '100px',
-    duration: 800,
+    duration: 1500,
     easing: 'ease-out',
     viewOffset: {
         bottom: 100,
