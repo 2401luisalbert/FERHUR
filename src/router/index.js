@@ -3,7 +3,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import ServiceLayout from '@/layouts/ServiceLayout.vue';
 import HomeView from '@/views/HomeView.vue';
 import AboutView from '@/views/AboutView.vue';
-import ServiceView from '@/views/ServiciosView.vue';
+import ServiceView from '@/views/ServicieView.vue';
 import ServiceDetail from '@/views/ServiceDetail.vue';
 
 const routes = [
