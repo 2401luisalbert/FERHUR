@@ -11,8 +11,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { defineProps, onMounted } from 'vue';
+
+import { ref , defineProps, onMounted  } from 'vue';
+import ScrollReveal from 'scrollreveal';
 
 const props = defineProps({
     images: {
@@ -41,6 +42,27 @@ const showModal = (image) => {
 const hideModal = () => {
     modalImage.value = null;
 };
+
+
+onMounted(() => {
+
+  const sr = ScrollReveal({
+    reset: false,
+    distance: '200px',
+    duration: 1500,
+    easing: 'ease-out',
+    viewOffset: {
+        bottom: 100,
+    },
+  });
+
+  sr.reveal('.grid-item', {
+    origin: 'left',
+  });
+
+});
+
+
 </script>
 
 <style scoped>
