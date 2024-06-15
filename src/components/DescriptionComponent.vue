@@ -81,10 +81,6 @@ onBeforeUnmount(() => {
   window.removeEventListener("resize", calculateDimensions);
 });
 
-
-
-
-
 </script>
 
 <style lang="css" scoped>

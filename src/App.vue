@@ -21,7 +21,7 @@ body {
 
 li{
   font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h1,h3{

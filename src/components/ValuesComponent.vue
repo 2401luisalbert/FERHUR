@@ -72,7 +72,7 @@ onMounted(() => {
     duration: 1500,
     easing: 'ease-out',
     viewOffset: {
-        bottom: 100,
+      bottom: 100,
     },
   });
 
@@ -89,17 +89,15 @@ onMounted(() => {
 
 .container__values {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img6.jpg');
   background-position: center;
   background-size: cover;
-  width: 100%;
-  min-height: 60vh;
-  justify-content: center;
-  align-items: center;
+  height: 50vh;
   padding: 2rem;
-  text-align: left;
-  font-family: 'Roboto', sans-serif;
+  
 }
 
 .list {
@@ -119,7 +117,8 @@ onMounted(() => {
   margin: 0.5rem;
 }
 
-h1, h3 {
+h1,
+h3 {
   color: #ffffff;
 }
 
@@ -148,6 +147,11 @@ h3 {
 
 /* Mobile */
 @media (max-width: 768px) {
+
+  .container__values {
+    height: 60vh;
+  }
+
   .list {
     width: 90%;
     padding: 0;
