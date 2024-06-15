@@ -3,7 +3,7 @@
         <div class="container__elements">
             <div class="container__texts">
                 <h1>¿Problemas con el mantenimiento?</h1>
-                <p>En <b>FERHUR</b>, contamos con la <b>experiencia, conocimientos técnicos y un equipo capacitado</b> para
+                <p>En <b>FERHUR</b>, contamos con la experiencia, conocimientos técnicos y un equipo capacitado para
                     ofrecer soluciones integrales de mantenimiento adaptadas a las necesidades específicas de tu empresa.
                     Nos especializamos en mantener tus equipos en óptimas condiciones operativas, garantizando así la
                     continuidad de tu productividad.</p>
@@ -47,6 +47,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+b{
+    font-family: 'loto';
+}
+
 .container {
     width: 100%;
     display: flex;

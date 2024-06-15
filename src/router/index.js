@@ -1,8 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import AboutView from '@/views/AboutView.vue'
-import HomeView from '@/views/HomeView.vue'
-import ServiceView from '@/views/ServiciosView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import ServiceLayout from '@/layouts/ServiceLayout.vue';
+import HomeView from '@/views/HomeView.vue';
+import AboutView from '@/views/AboutView.vue';
+import ServiceView from '@/views/ServicieView.vue';
+import ServiceDetail from '@/views/ServiceDetail.vue';
 
 const routes = [
   {
@@ -12,41 +14,35 @@ const routes = [
       {
         path: '',
         component: HomeView,
-        name: 'Inicio'
-      
+        name: 'Inicio',
       },
       {
-        path: '/Nosotros',
+        path: 'nosotros',
         component: AboutView,
-        name: 'Nosotros'
-      }
-      ,
+        name: 'Nosotros',
+      },
       {
-        path: '/servicios',
+        path: 'servicios',
         component: ServiceView,
-        name: 'Servicios'
+        name: 'Servicios',
       },
+    ],
+  },
+  {
+    path: '/servicios',
+    component: ServiceLayout,
+    children: [
       {
-        path: '/servicios/servicio1',
-        name: 'Servicio1',
-        component: ServiceView
+        path: ':service',
+        name: 'ServiceDetail',
+        component: ServiceDetail,
       },
-      {
-        path: '/servicios/servicio2',
-        name: 'Servicio2',
-        component: ServiceView
-      },
-      {
-        path: '/servicios/servicio3',
-        name: 'Servicio3',
-        component: ServiceView
-      },
-    ]
-  }
-]
-//process.env.BASE_URL
+    ],
+  },
+];
+
 const router = createRouter({
-  history: createWebHistory('#'),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -54,7 +50,7 @@ const router = createRouter({
     } else {
       return { top: 0 };
     }
-  }
+  },
 });
 
-export default router
+export default router;

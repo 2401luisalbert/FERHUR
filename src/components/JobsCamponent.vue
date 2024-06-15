@@ -5,7 +5,7 @@
         <img :src="service.image" class="icon" alt="" />
         <h2>{{ service.title }}</h2>
         <p>{{ service.description }}</p>
-        <a :href="service.link">Ver</a>
+        <RouterLink :to="{ name: 'ServiceDetail', params: { service: service.name } }">Ver</RouterLink>
       </div>
     </div>
   </div>
@@ -17,28 +17,28 @@ import ScrollReveal from 'scrollreveal';
 
 const services = ref([
   {
-    image: require('../assets/frigor.png'), 
+    image: require('../assets/frigor.png'),
     title: 'Refrigeración',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?',
-    link: '#',
+    name: 'refrigeracion',
   },
   {
     image: require('../assets/aire.png'),
     title: 'Clima',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?',
-    link: '#',
+    name: 'clima',
   },
   {
     image: require('../assets/pesticida.png'),
     title: 'Fumigación',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?',
-    link: '#',
+    name: 'fumigacion',
   },
   {
-    image: require('../assets/maquinaria.png'), 
+    image: require('../assets/maquinaria.png'),
     title: 'Cámaras de refrigeración',
     description: 'Descripción sobre el refrigerador. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?',
-    link: '#',
+    name: 'camarasderefrigeracion',
   },
 ]);
 
@@ -49,7 +49,7 @@ onMounted(() => {
     duration: 1500,
     easing: 'ease-out',
     viewOffset: {
-      bottom: 300,
+      bottom: 100,
     },
   });
 
@@ -59,9 +59,8 @@ onMounted(() => {
 });
 </script>
 
-
-
-<style lang="css" scoped>
+<style scoped>
+/* Estilos del componente */
 .cards {
   max-width: 1200px;
   margin: 0 auto;
@@ -79,17 +78,14 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
 }
 
 .content__cards {  
-  border: solid 1px black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
   width: calc(33.333% - 20px);
   margin: 10px;
   padding: 15px;
@@ -104,8 +100,8 @@ onMounted(() => {
   height: 50px;
 }
 
-
 .content__cards h2 {
+  color: black;
   font-size: 24px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -122,7 +118,6 @@ onMounted(() => {
 
 .content__cards a {
   font-family: 'Lato', sans-serif;
-  margin: 16px 0;
   background: black;
   color: white;
   text-decoration: none;
@@ -153,6 +148,10 @@ onMounted(() => {
   filter: invert();
 }
 
+.content__cards:hover h2 {
+  color: rgb(255, 255, 255);
+}
+
 @media (max-width: 900px) {
   .content__cards {
     width: calc(50% - 20px);
@@ -167,4 +166,3 @@ onMounted(() => {
   }
 }
 </style>
-

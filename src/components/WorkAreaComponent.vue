@@ -63,10 +63,8 @@ const lista = [
   width: 100%;
 }
 
-.title {
-  font-size: 2rem;
-  text-align: center;
-  margin: 0 1rem; 
+h1{
+  color: #ffffff;
 }
 
 .hr {
@@ -85,11 +83,9 @@ const lista = [
   justify-content: center; 
   padding: 0;
   margin: 0;
-  text-decoration: none;
 }
 
 .list__item {
-  font-size: 1.2rem;
   list-style-position: outside;
   position: relative;
   padding-bottom: 0.2rem;

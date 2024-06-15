@@ -1,10 +1,6 @@
 <template>
     <div class="container__believe">
 
-        <div>
-            <h1 class="title">Lo que creemos...</h1>
-        </div>
-
         <div class="container__elements">
 
             <div class="container__img">
@@ -17,13 +13,13 @@
             </div>
 
             <div class="container__texts">
-                <h3>En FERHUR tenemos la firme creencia de que no existen límites para hacer crecer tu negocio, en
+                <p>En FERHUR tenemos la firme creencia de que no existen límites para hacer crecer tu negocio, en
                     cualquier parte del mundo existe alguien que necesita lo que tú haces, ¡Déjanos encontrarlo por ti!
-                </h3>
-                <h3>Por otro lado, si buscas un servicio con ciertas características, danos la oportunidad de
+                </p>
+                <p>Por otro lado, si buscas un servicio con ciertas características, danos la oportunidad de
                     presentártelo dándote al mismo tiempo nuestro respaldo, para que obtengas lo que necesitas. En
                     FERHUR ofrecemos servicios confiables y de calidad. Todos nuestros proveedores pasan por un filtro
-                    previo e investigación que nos permite ofrecer seguridad en cada uno.</h3>
+                    previo e investigación que nos permite ofrecer seguridad en cada uno.</p>
             </div>
 
         </div>
@@ -68,18 +64,12 @@ onMounted(() => {
 
 <style lang="css" scoped>
 .container__believe {
-    margin-top: 2rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: left;
-}
-
-.title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
 }
 
 .container__elements {
@@ -120,9 +110,8 @@ onMounted(() => {
     padding: 0 2rem;
 }
 
-h3 {
+p {
     font-size: 1.2rem;
-    font-weight: 400;
     color: #ffffff;
     margin: 3rem 0;
 }
@@ -141,17 +130,14 @@ h3 {
         width: 100%;
     }
 
-    .title {
-        text-align: lef;
-        font-size: 2.3rem;
-        margin-bottom: 0;
-        padding-left: 2rem ;
+    .container__texts {
+        padding: 0 1rem; 
     }
 
-    h3 {
+    p {
         text-align: left;
         font-size: 0.9rem;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
     }
 }
 </style>

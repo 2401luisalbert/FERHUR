@@ -3,7 +3,7 @@
     <div class="inner__header">
       <img v-if="logo" src="../assets/logo.svg" alt="logo" class="logo">
       <h1 v-if="title" class="header-title">{{ props.title }}</h1>
-      <h3 v-if="subtitle" class="header-subtitle">{{ props.subtitle }}</h3>
+      <h4 v-if="subtitle" class="header-subtitle">{{ props.subtitle }}</h4>
     </div>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -36,7 +36,6 @@ const props = defineProps({
   position: relative;
   text-align: center;
   background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-  color: white;
   z-index: 1;
   overflow: hidden;
   display: flex;
@@ -59,13 +58,11 @@ const props = defineProps({
 }
 
 .header-title {
-  margin: 0;
-  font-size: 2.5rem;
+color: #ffffff;
 }
 
 .header-subtitle {
-  margin: 0;
-  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 .waves {

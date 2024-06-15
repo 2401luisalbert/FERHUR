@@ -2,7 +2,8 @@
   <footer>
     <div class="footer">
       <div class="row">
-        <a href="https://www.facebook.com/profile.php?id=100089078094393" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100089078094393" target="_blank"><i
+            class="fa fa-facebook"></i></a>
         <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
         <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a>
         <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -12,8 +13,10 @@
         <ul>
           <li><router-link :to="{ name: 'Inicio' }" exact-active-class="nav__link--active">Inicio</router-link></li>
           <li><router-link :to="{ name: 'Nosotros' }" exact-active-class="nav__link--active">Nosotros</router-link></li>
-          <li><router-link :to="{ name: 'Servicios' }" exact-active-class="nav__link--active">Servicios</router-link></li>
-          <li><router-link to="/Terminos" exact-active-class="nav__link--active">Términos & Condiciones</router-link></li>
+          <li><router-link :to="{ name: 'Servicios' }" exact-active-class="nav__link--active">Servicios</router-link>
+          </li>
+          <li><router-link to="/Terminos" exact-active-class="nav__link--active">Términos & Condiciones</router-link>
+          </li>
         </ul>
       </div>
 
@@ -44,13 +47,15 @@
   font-size: 0.8em;
 }
 
-.footer .row a, .footer .row router-link {
+.footer .row a,
+.footer .row router-link {
   text-decoration: none;
   color: rgb(255, 255, 255);
   transition: 0.5s;
 }
 
-.footer .row a:hover, .footer .row router-link:hover {
+.footer .row a:hover,
+.footer .row router-link:hover {
   color: #000000;
 }
 
@@ -63,7 +68,8 @@
   margin: 0px 30px;
 }
 
-.footer .row a i, .footer .row router-link i {
+.footer .row a i,
+.footer .row router-link i {
   font-size: 2em;
   margin: 0% 1%;
 }
@@ -80,7 +86,8 @@
     text-align: left;
   }
 
-  .footer .row a i, .footer .row router-link i {
+  .footer .row a i,
+  .footer .row router-link i {
     margin: 0% 3%;
   }
 }

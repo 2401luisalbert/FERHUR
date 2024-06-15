@@ -2,22 +2,22 @@
   <div class="container__values">
     <transition name="fade-slide">
       <div v-if="showValores" class="content">
-        <h1>Valores</h1>
+        <h3>Valores</h3>
         <ul class="list">
           <li class="list__item">
-            <h3>Compromiso</h3>
+            <h4>Compromiso</h4>
           </li>
           <li class="list__item">
-            <h3>Calidad</h3>
+            <h4>Calidad</h4>
           </li>
           <li class="list__item">
-            <h3>Responsabilidad</h3>
+            <h4>Responsabilidad</h4>
           </li>
           <li class="list__item">
-            <h3>Seguridad</h3>
+            <h4>Seguridad</h4>
           </li>
           <li class="list__item">
-            <h3>Transparencia</h3>
+            <h4>Transparencia</h4>
           </li>
         </ul>
       </div>
@@ -25,15 +25,15 @@
     <transition name="fade-slide">
       <div v-if="showMision" class="content">
         <h1>Misión</h1>
-        <h3>Ser la empresa líder en todos los proyectos constructivos que hacemos, involucrarnos por completo en los
-          trabajos hasta satisfacer todas y cada una de las necesidades del cliente.</h3>
+        <h4>Ser la empresa líder en todos los proyectos constructivos que hacemos, involucrarnos por completo en los
+          trabajos hasta satisfacer todas y cada una de las necesidades del cliente.</h4>
       </div>
     </transition>
     <transition name="fade-slide">
       <div v-if="showVision" class="content">
         <h1>Visión</h1>
-        <h3>Ser la empresa líder en todos los proyectos constructivos que hacemos, involucrarnos por completo en los
-          trabajos hasta satisfacer todas y cada una de las necesidades del cliente.</h3>
+        <h4>Ser la empresa líder en todos los proyectos constructivos que hacemos, involucrarnos por completo en los
+          trabajos hasta satisfacer todas y cada una de las necesidades del cliente.</h4>
       </div>
     </transition>
   </div>
@@ -97,7 +97,6 @@ onMounted(() => {
   background-size: cover;
   height: 50vh;
   padding: 2rem;
-  
 }
 
 .list {
@@ -123,14 +122,12 @@ h3 {
 }
 
 h1 {
-  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 100;
 }
 
 .content {
@@ -167,7 +164,7 @@ h3 {
     font-size: 1.8rem;
   }
 
-  h3 {
+  h4 {
     font-size: 1rem;
   }
 

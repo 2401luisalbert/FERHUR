@@ -4,9 +4,7 @@
       <figure class="container__image"></figure>
       <div class="container__contac">
         <h1>Servicio especializado de Mantenimiento <b>FERHUR</b></h1>
-        <h4>Tenemos precios más accesibles al promedio con tiempos de respuesta a tu solicitud y al proceso de
-          reparación más cortos, diversidad de opciones tanto técnicas como de presupuesto y te otorgamos un
-          ejecutivo de cuenta quien te dará una atención totalmente personalizada para tu mantenimiento.</h4>
+        <h4>Contacta con nosotros y responderemos lo antes posible a cualquier pregunta que tengas sobre nuestros servicios.</h4>
           <a href="https://wa.me/1234567890" target="_blank" class="contact-button">
           Contactanos <img src="../assets/whatsapp.png" alt="">
         </a>

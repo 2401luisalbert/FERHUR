@@ -136,19 +136,17 @@ onBeforeUnmount(() => {
 }
 
 
-.title {
-  color: #333;
+h1 {
   font-size: 2.3rem;
-  margin-bottom: 10px;
 }
 
-.paragraph {
-  color: #666;
+p{
   font-size: 16px;
   line-height: 1.5;
-
 }
 
+
+/* Escritorio */
 @media (min-width: 768px) {
   .container {
     width: 100%;
@@ -169,7 +167,6 @@ onBeforeUnmount(() => {
   .container__images {
     margin-bottom: 0;
   }
-
 
   .img1,
   .img2 {
