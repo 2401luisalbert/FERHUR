@@ -100,11 +100,13 @@ onMounted(() => {
 .container__left h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: black;
 }
 
 .container__left h1 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
+    color: black;
 }
 
 .container__right {
@@ -127,18 +129,21 @@ onMounted(() => {
 
 .container__list h1 {
     font-size: 2.2rem;
+    color: black;
 }
 
 .text__list h1 {
     font-size: 1.4rem;
-
+    color: black;
 }
+
 
 .text__list h3 {
     font-size: 0.9rem;
     color: #555;
 }
 
+/* Escritorio */
 @media (min-width: 768px) {
     .container__elements {
         flex-direction: row;

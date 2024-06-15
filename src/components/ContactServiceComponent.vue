@@ -39,6 +39,9 @@ onMounted(() => {
 </script>
 
 <style lang="css" scoped>
+
+/*Movil*/ 
+
 @keyframes vibrate {
   0% { transform: translate(0); }
   20% { transform: translate(-2px, 2px); }
@@ -59,7 +62,7 @@ onMounted(() => {
 .container__elements {
   position: relative;
   width: 100%;
-  max-width: 1500px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,6 +106,54 @@ onMounted(() => {
 }
 
 .contact-button {
+  background-color: #0091ff;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.contact-button img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+
+/*Escritorio*/ 
+@media (min-width: 768px) {
+  .container__elements {
+    margin-top: 4rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .container__image {
+    width: 100%;
+  }
+
+  .container__contac {
+    width: 50%;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin-left: 25rem;
+  }
+
+  .container__contac h1 {
+    color: black;
+    font-size: 2rem;
+  }
+
+  h4{
+    font-size: 1.2rem;
+  }
+
+  .contact-button {
   background-color: #25D366;
   color: white;
   text-decoration: none;
@@ -121,40 +172,6 @@ onMounted(() => {
 .contact-button:hover img {
   animation: vibrate 0.2s linear infinite;
 }
-
-.contact-button img {
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
-
-
-@media (min-width: 768px) {
-  .container__elements {
-    margin-top: 4rem;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .container__image {
-    width: 70%;
-  }
-
-  .container__contac {
-    width: 60%;
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-    margin-left: 25rem;
-  }
-
-  .container__contac h1 {
-    color: black;
-    font-size: 2rem;
-  }
-
-  h4{
-    font-size: 1.2rem;
-  }
 
 }
 </style>

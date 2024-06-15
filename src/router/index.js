@@ -40,9 +40,9 @@ const routes = [
     ],
   },
 ];
-
+//process.env.BASE_URL
 const router = createRouter({
-  history: createWebHistory("#"),
+  history: createWebHistory('#'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

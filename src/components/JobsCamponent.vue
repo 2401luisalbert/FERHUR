@@ -118,7 +118,7 @@ onMounted(() => {
 
 .content__cards a {
   font-family: 'Lato', sans-serif;
-  background: black;
+  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);;
   color: white;
   text-decoration: none;
   text-transform: uppercase;

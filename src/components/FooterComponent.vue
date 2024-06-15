@@ -42,7 +42,6 @@
 .footer .row {
   width: 100%;
   margin: 1% 0%;
-  padding: 0.6% 0%;
   color: rgb(0, 0, 0);
   font-size: 0.8em;
 }

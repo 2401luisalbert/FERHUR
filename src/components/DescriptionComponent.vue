@@ -133,11 +133,13 @@ onBeforeUnmount(() => {
   height: 250px;
   top: 150px;
   left: 50px;
+  border: 5px solid white;
 }
 
 
 h1 {
   font-size: 2.3rem;
+  color: black;
 }
 
 p{
@@ -185,5 +187,10 @@ p{
     top: 150px;
     left: 220px;
   }
+
+  h1{
+    color: black;
+  }
+
 }
 </style>

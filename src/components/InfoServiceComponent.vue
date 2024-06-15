@@ -2,25 +2,27 @@
     <div class="container">
         <div class="container__elements">
             <div class="container__texts">
-                <h1>¿Problemas con el mantenimiento?</h1>
-                <p>En <b>FERHUR</b>, contamos con la experiencia, conocimientos técnicos y un equipo capacitado para
-                    ofrecer soluciones integrales de mantenimiento adaptadas a las necesidades específicas de tu
-                    empresa.
-                    Nos especializamos en mantener tus equipos en óptimas condiciones operativas, garantizando así la
-                    continuidad de tu productividad.</p>
+                <h1>{{ props.title }}</h1>
+                <p>{{ props.description }}</p>
                 <p>¡No dejes que el mantenimiento afecte el rendimiento de tu negocio!</p>
             </div>
             <div class="container__images">
-                <img src="../assets/img1.jpg" alt="maintenance1" class="img1">
-                <img src="../assets/img2.jpg" alt="maintenance2" class="img2">
+                <img :src="props.image" alt="service image" class="img1">
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, defineProps } from 'vue';
 import ScrollReveal from 'scrollreveal';
+
+// Definir props
+const props = defineProps({
+    title: String,
+    description: String,
+    image: String
+});
 
 onMounted(() => {
     const sr = ScrollReveal({
@@ -48,20 +50,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
-b {
-    font-family: 'Lato', sans-serif;
-}
-
+/* Escritorio*/
 .container {
+    overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 15rem;
-
 }
 
 .container__elements {
-    padding-top: 6rem;
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -71,7 +68,6 @@ b {
 
 .container__texts {
     width: 40%;
-    padding-right: 20px;
 }
 
 .container__texts h1 {
@@ -82,50 +78,17 @@ b {
 .container__texts p {
     font-size: 1.3rem;
     line-height: 1.6;
-    color: #666666;
-    margin-bottom: 20px;
-}
-
-.container__texts b {
-    font-weight: bold;
-}
-
-.list__icons {
-    font-size: 1.3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 10px;
-    gap: 0.8rem;
-}
-
-.list__check {
-    width: 15px;
+    color: #505050;
 }
 
 .container__images {
-    position: relative;
     width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.img1,
-.img2 {
-    position: absolute;
-    top: 0;
-    width: 70%;
-    max-width: 100%;
-    border: 8px solid #ffffff;
-    z-index: 1;
 }
 
 .img1 {
-    top: 150px;
-    left: 10px;
-    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    border: 8px solid #ffffff;
 }
 
 /* Movil */
@@ -138,7 +101,7 @@ b {
     }
 
     .container__elements {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         padding-top: 2rem;
         padding: 1.5rem;
@@ -156,19 +119,10 @@ b {
 
     .container__texts p {
         font-size: 1rem;
-
-    }
-
-    .list__icons {
-        font-size: 0.9rem;
-    }
-
-    .list__check {
-        width: 12px;
     }
 
     .container__images {
-        display: none;
+        width: 100%;
     }
 }
 </style>
