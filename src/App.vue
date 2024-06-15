@@ -24,7 +24,7 @@ li{
   font-weight: 400;
 }
 
-h1,h3{
+h1,h2,h3{
     padding: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 600;

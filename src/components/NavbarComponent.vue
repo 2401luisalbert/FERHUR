@@ -3,7 +3,6 @@
         <div class="container">
             <router-link :to="{ name: 'Inicio' }" class="nav__link" exact-active-class="nav__link--active"
                 @click="closeMenu">
-                <!-- <img class="nav__logo nav__logo--default" :class="{ 'nav__logo--hidden': scrolled }" src="../assets/logo__negro.svg" alt="Logo Negro"> -->
                 <img class="nav__logo" src="../assets/logo.svg" alt="Logo Color">
             </router-link>
 
@@ -20,26 +19,9 @@
                     <router-link :to="{ name: 'Nosotros' }" class="nav__link" exact-active-class="nav__link--active"
                         @click="closeMenu">Acerca de</router-link>
                 </li>
-                <li class="nav__item nav__item--has-submenu">
-                    <a href="#" class="nav__link" :class="{ 'nav__link--active': isActive('Servicios') }"
-                        @click.prevent="toggleSubmenu"  @click="scrollToServices">Servicios</a>
-                    <ul class="nav__submenu" :class="{ 'submenu-visible': submenuVisible || isActive('Servicios') }">
-                        <li class="nav__submenu-item">
-                            <router-link :to="{ name: 'Servicio1' }" class="nav__submenu-link"
-                                exact-active-class="nav__submenu-link--active" @click="closeMenu">Servicio
-                                1</router-link>
-                        </li>
-                        <li class="nav__submenu-item">
-                            <router-link :to="{ name: 'Servicio2' }" class="nav__submenu-link"
-                                exact-active-class="nav__submenu-link--active" @click="closeMenu">Servicio
-                                2</router-link>
-                        </li>
-                        <li class="nav__submenu-item">
-                            <router-link :to="{ name: 'Servicio3' }" class="nav__submenu-link"
-                                exact-active-class="nav__submenu-link--active" @click="closeMenu">Servicio
-                                3</router-link>
-                        </li>
-                    </ul>
+                <li class="nav__item">
+                    <router-link :to="{ name: 'Servicios' }" class="nav__link" exact-active-class="nav__link--active"
+                        @click="closeMenu">Servicios</router-link>
                 </li>
                 <li class="nav__item">
                     <a href="#" class="nav__link" exact-active-class="nav__link--active"
@@ -47,29 +29,22 @@
                 </li>
             </ul>
 
-            <a href="#" class="nav__toggle" @click="openMenu">
+            <button class="nav__toggle" @click="openMenu">
                 <img v-if="!menuOpen" src="../assets/menu.png" class="nav__icon nav__icon--menu">
                 <img v-else src="../assets/close.png" class="nav__icon nav__icon--close">
-            </a>
+            </button>
         </div>
     </nav>
 </template>
 
-
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router';
 import VueScrollTo from 'vue-scrollto';
 
 const menuOpen = ref(false);
 const submenuVisible = ref(false);
-const route = useRoute();
 const scrolled = ref(false);
 const threshold = 10;
-
-const toggleSubmenu = () => {
-    submenuVisible.value = !submenuVisible.value;
-};
 
 const openMenu = () => {
     menuOpen.value = !menuOpen.value;
@@ -80,25 +55,13 @@ const closeMenu = () => {
     submenuVisible.value = false;
 };
 
-const isActive = (menu) => {
-    if (menu === 'Servicios') {
-        return route.name === 'Servicio1' || route.name === 'Servicio2' || route.name === 'Servicio3';
-    }
-    return false;
-};
-
 const handleScroll = () => {
     scrolled.value = Math.abs(window.scrollY) > threshold;
 };
 
 const scrollToContact = () => {
-  VueScrollTo.scrollTo('#contact', 800);
-  closeMenu();
-};
-
-const scrollToServices = () => {
-  VueScrollTo.scrollTo('#services', 800);
-  closeMenu();
+    VueScrollTo.scrollTo('#contact', 800);
+    closeMenu();
 };
 
 onMounted(() => {
@@ -108,9 +71,7 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
-
 </script>
-
 
 
 <style lang="css" scoped>
@@ -234,56 +195,18 @@ body {
     font-weight: bold;
 }
 
-.nav__submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 150px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    transition: background-color 0.3s;
-}
-
-.nav__submenu-item {
-    list-style: none;
-}
-
-.nav__submenu-link {
-    display: block;
-    padding: 10px 20px;
-    color: #000;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.nav__submenu-link:hover {
-    background-color: #f0f0f0;
-    color: #0000ff;
-}
-
-.nav__submenu-link--active {
-    background-color: #f0f0f0;
-    color: #0000ff;
-    font-weight: bold;
-}
-
-.nav__item--has-submenu:hover .nav__submenu {
-    display: block;
-}
-
-.nav__item--has-submenu .nav__submenu {
-    display: none;
-}
-
-.nav__item--has-submenu.submenu-visible .nav__submenu {
-    display: block;
-}
 
 .nav__toggle {
     display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav__toggle:focus {
+    outline: none;
 }
 
 @media (min-width: 768px) {
@@ -355,22 +278,6 @@ body {
 
     .nav__link--active::after {
         width: 100%;
-    }
-
-    .nav__submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 150px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 10;
-        transition: background-color 0.3s;
-    }
-
-    .nav__item--has-submenu:hover .nav__submenu {
-        display: block;
     }
 }
 </style>
